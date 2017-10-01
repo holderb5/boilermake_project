@@ -1,7 +1,6 @@
 fp = open("cad-events-boilermake-partial.csv")
 
 badge_dict = {}
-line_num = 0
 acceptable = ["SCHED","ARREST","DSP","STKDSP","OUTSER","TSTOP"]
 for line in fp:
     line_list = line.split(",")
@@ -26,9 +25,8 @@ for line in fp:
                 badge_dict[CadUnit][DispType] = [(time1,time2)]
             else:
                 badge_dict[CadUnit][DispType].append((time1,time2))
-    line_num += 1
 
-search = input("Search two CadUnits to compare (CadUnit1 space CadUnit2: ")
+search = input("Search two CadUnits to compare (CadUnit1 space CadUnit2): ")
 search = search.split()
 Cad_info = []
 Cad2_info = []
